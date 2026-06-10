@@ -4,12 +4,14 @@ This repository is for the Educational Practice project.
 
 ## Team Information
 
-Academic group:
+Academic group: 
+IT-2503
 
 Team name:
+AIDI 2503
 
 Project track:
-- Web CRUD / Machine Learning / Deep Learning
+- Web CRUD
 
 Project topic:
 
@@ -17,10 +19,10 @@ Project topic:
 
 | No. | Full Name | Role / Contribution |
 |---|---|---|
-| 1 |  |  |
-| 2 |  |  |
-| 3 |  |  |
-| 4 |  |  |
+| 1 | Yermakov Ilya | Team Lead/Backend |
+| 2 | Khametov Ilyas | Backend |
+| 3 | Askar Azamat | Frontend |
+| 4 | Kabyken Diyar | QA |
 
 ## Project Description
 
