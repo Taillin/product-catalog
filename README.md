@@ -27,7 +27,12 @@ Product Catalog
 
 ## Project Description
 
-Briefly describe your project here.
+**Product Catalog** is a web application designed for managing a catalog of items in some markets.
+### Core Features (CRUD + Search)
+* **Create:** In app you can add new products to the catalog (name, category, price, description and image URL)
+* **Read:** View all products in catalog with user-frendly interface
+* **Update:** Editing existing products details
+* **Delete:** Removing products from database
 
 ## How to Run
 
