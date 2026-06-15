@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${product.id == 0} ? 'Добавить товар' : 'Редактировать товар'">Товар</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', system-ui, sans-serif; }
+        .form-card { border: none; border-radius: 16px; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5 shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/products"><i class="bi bi-shop me-2"></i>ProductCatalog</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <div class="card shadow form-card p-4 p-md-5 bg-white">
+                <h3 class="fw-bold text-dark mb-2" th:text="${product.id == 0} ? 'Новый товар' : 'Редактирование товара'">Форма</h3>
+                <p class="text-muted small mb-4">Заполните поля ниже. Поля, отмеченные *, обязательны.</p>
+                <hr class="mb-4">
+
+                <form th:action="@{/products/save}" th:object="${product}" method="post">
+                    <input type="hidden" th:field="*{id}" />
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold text-secondary">Название товара *</label>
+                        <input type="text" th:field="*{name}" class="form-control form-control-lg fs-6" required placeholder="Например: Смартфон iPhone 15">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-semibold text-secondary">Категория</label>
+                            <input type="text" th:field="*{category}" class="form-control" placeholder="Электроника">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-semibold text-secondary">Цена (KZT) *</label>
+                            <input type="number" step="0.01" th:field="*{price}" class="form-control" required placeholder="0">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold text-secondary">Ссылка на изображение</label>
+                        <input type="url" th:field="*{imageUrl}" class="form-control" placeholder="https://example.com/image.jpg">
+                        <div class="form-text text-muted">Вставьте URL картинки из интернета.</div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold text-secondary">Описание</label>
+                        <textarea th:field="*{description}" class="form-control" rows="4" placeholder="Подробное описание характеристик товара..."></textarea>
+                    </div>
+
+                    <div class="d-flex gap-2 pt-2">
+                        <a th:href="@{/products}" class="btn btn-light border w-50">Отмена</a>
+                        <button type="submit" class="btn btn-success w-50"><i class="bi bi-check-circle"></i> Сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
