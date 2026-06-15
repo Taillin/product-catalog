@@ -14,6 +14,7 @@ Project track:
 - Web CRUD
 
 Project topic:
+Product Catalog
 
 ## Team Members
 
