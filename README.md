@@ -10,7 +10,7 @@
 - **Delete** — Remove products from the database
 - **Search** — Filter products by name and/or category
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -21,7 +21,7 @@
 | Build | Maven |
 
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 app/src/main/java/com/aitu/product_catalog/
@@ -43,7 +43,7 @@ app/src/main/resources/
 └── application.properties
 ```
 
-## 🔗 API Endpoints
+## API Endpoints
 
 | Method | URL | Description |
 |--------|-----|-------------|
@@ -54,7 +54,7 @@ app/src/main/resources/
 | GET | `/products/edit/{id}` | Open edit form |
 | GET | `/products/delete/{id}` | Delete product |
 
-## 👥 Team
+## Team
 
 | Name | Role |
 |------|------|
