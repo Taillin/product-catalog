@@ -1,50 +1,66 @@
-# Educational Practice Mini-Project
+# Product Catalog
 
-This repository is for the Educational Practice project.
+> A web application for managing a product catalog — create, view, edit, delete and search products with a clean UI.
 
-## Team Information
+## Features
 
-Academic group: 
-IT-2503
+- **Create** — Add new products (name, category, price, description, image URL)
+- **Read** — Browse all products in a user-friendly list
+- **Update** — Edit existing product details
+- **Delete** — Remove products from the database
+- **Search** — Filter products by name and/or category
 
-Team name:
-AIDI 2503
+## 🛠️ Tech Stack
 
-Project track:
-- Web CRUD
+| Layer | Technology |
+|-------|-----------|
+| Backend | Java 25, Spring Boot 4.0 |
+| Data Access | Spring Data JPA, Hibernate |
+| Database | PostgreSQL |
+| Frontend | Thymeleaf, HTML |
+| Build | Maven |
 
-Project topic:
-Product Catalog
 
-## Team Members
+## 📁 Project Structure
 
-| No. | Full Name | Role / Contribution |
-|---|---|---|
-| 1 | Yermakov Ilya | Team Lead/Backend |
-| 2 | Khametov Ilyas | Backend |
-| 3 | Askar Azamat | Frontend |
-| 4 | Kabyken Diyar | QA |
+```
+app/src/main/java/com/aitu/product_catalog/
+├── controller/
+│   └── ProductController.java   # HTTP endpoints (CRUD + search)
+├── model/
+│   └── Product.java             # JPA entity
+├── repository/
+│   └── ProductRepository.java   # Database queries
+├── service/
+│   └── ProductService.java      # Business logic
+└── ProductCatalogApplication.java
 
-## Project Description
-
-**Product Catalog** is a web application designed for managing a catalog of items in some markets.
-### Core Features (CRUD + Search)
-* **Create:** In app you can add new products to the catalog (name, category, price, description and image URL)
-* **Read:** View all products in catalog with user-frendly interface
-* **Update:** Editing existing products details
-* **Delete:** Removing products from database
-
-## How to Run
-
-```bash
-pip install -r requirements.txt
-python src/main.py
+app/src/main/resources/
+├── templates/
+│   ├── product-list.html        # Products list page
+│   ├── product-detail.html      # Single product page
+│   └── product-form.html        # Create / Edit form
+└── application.properties
 ```
 
-## Demo Video
+## 🔗 API Endpoints
 
-(https://astanait-my.sharepoint.com/:v:/g/personal/254797_astanait_edu_kz/IQAp3y0cwnmyQYlh2KieWY0vAUKEH_yLEN5n64yJrrvVN44?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5CxMBd)
+| Method | URL | Description |
+|--------|-----|-------------|
+| GET | `/products` | List all (supports `?search=` & `?category=`) |
+| GET | `/products/{id}` | View product details |
+| GET | `/products/new` | Open create form |
+| POST | `/products/save` | Save new or updated product |
+| GET | `/products/edit/{id}` | Open edit form |
+| GET | `/products/delete/{id}` | Delete product |
 
-## Report
+## 👥 Team
 
-The final report must be submitted on Moodle as PDF.
+| Name | Role |
+|------|------|
+| Yermakov Ilya | Team Lead / Backend |
+| Khametov Ilyas | Backend |
+| Askar Azamat | Frontend |
+| Kabyken Diyar | QA |
+
+Academic group: **IT-2503 / AIDI 2503**
